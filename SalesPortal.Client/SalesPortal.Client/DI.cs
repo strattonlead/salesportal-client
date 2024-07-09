@@ -34,15 +34,18 @@ namespace SalesPortal.Client.DependencyInjection
                 case ServiceLifetime.Singleton:
                     services.AddSingleton<IAccessTokenProvider, AccessTokenProvider>();
                     services.AddSingleton<SalesPortalClientProvider>();
+                    services.AddSingleton(x => x.GetRequiredService<SalesPortalClientProvider>().Client);
                     break;
                 case ServiceLifetime.Scoped:
                     services.AddScoped<IAccessTokenProvider, AccessTokenProvider>();
                     services.AddScoped<SalesPortalClientProvider>();
+                    services.AddScoped(x => x.GetRequiredService<SalesPortalClientProvider>().Client);
                     break;
                 case ServiceLifetime.Transient:
                 default:
                     services.AddTransient<IAccessTokenProvider, AccessTokenProvider>();
                     services.AddTransient<SalesPortalClientProvider>();
+                    services.AddTransient(x => x.GetRequiredService<SalesPortalClientProvider>().Client);
                     break;
             }
 

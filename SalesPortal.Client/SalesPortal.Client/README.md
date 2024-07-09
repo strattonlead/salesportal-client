@@ -26,7 +26,7 @@ var serviceProvider = services.BuildServiceProvider();
 ```
 var clientProvider = serviceProvider.GetRequiredService<SalesPortalClientProvider>();
 var client = clientProvider.Client;
-var getResponse = client.Product.GetProduct.PostAsync(new GetProductRequest() { Id = 1 }).Result;
+var getResponse = await client.Product.GetProduct.PostAsync(new GetProductRequest() { Id = 1 });
 ```
 
 ## Expand nested properties
@@ -34,7 +34,7 @@ var getResponse = client.Product.GetProduct.PostAsync(new GetProductRequest() { 
 You can expand 4 levels deep. 
 
 ```
-var getResponse = client.Product.GetProduct.PostAsync(new GetProductRequest() { Id = 1, Expand = new List<string> { "ProductGroup.SalesGroup", "Sales" } }).Result;
+var getResponse = await client.Product.GetProduct.PostAsync(new GetProductRequest() { Id = 1, Expand = new List<string> { "ProductGroup.SalesGroup", "Sales" } });
 ```
     
 # Generate or update your own client
