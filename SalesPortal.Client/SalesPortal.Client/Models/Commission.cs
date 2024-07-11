@@ -31,6 +31,8 @@ namespace SalesPortal.Client.Models
 #endif
         /// <summary>The creditNoteId property</summary>
         public long? CreditNoteId { get; set; }
+        /// <summary>The date property</summary>
+        public DateTimeOffset? Date { get; set; }
         /// <summary>The id property</summary>
         public long? Id { get; set; }
         /// <summary>The monthlyReport property</summary>
@@ -89,6 +91,7 @@ namespace SalesPortal.Client.Models
                 { "commissionPoolId", n => { CommissionPoolId = n.GetLongValue(); } },
                 { "creditNote", n => { CreditNote = n.GetObjectValue<global::SalesPortal.Client.Models.CreditNote>(global::SalesPortal.Client.Models.CreditNote.CreateFromDiscriminatorValue); } },
                 { "creditNoteId", n => { CreditNoteId = n.GetLongValue(); } },
+                { "date", n => { Date = n.GetDateTimeOffsetValue(); } },
                 { "id", n => { Id = n.GetLongValue(); } },
                 { "monthlyReport", n => { MonthlyReport = n.GetObjectValue<global::SalesPortal.Client.Models.MonthlyReport>(global::SalesPortal.Client.Models.MonthlyReport.CreateFromDiscriminatorValue); } },
                 { "monthlyReportId", n => { MonthlyReportId = n.GetLongValue(); } },
@@ -111,6 +114,7 @@ namespace SalesPortal.Client.Models
             writer.WriteLongValue("commissionPoolId", CommissionPoolId);
             writer.WriteObjectValue<global::SalesPortal.Client.Models.CreditNote>("creditNote", CreditNote);
             writer.WriteLongValue("creditNoteId", CreditNoteId);
+            writer.WriteDateTimeOffsetValue("date", Date);
             writer.WriteLongValue("id", Id);
             writer.WriteObjectValue<global::SalesPortal.Client.Models.MonthlyReport>("monthlyReport", MonthlyReport);
             writer.WriteLongValue("monthlyReportId", MonthlyReportId);
