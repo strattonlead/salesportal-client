@@ -7,6 +7,7 @@ using Microsoft.Kiota.Serialization.Multipart;
 using Microsoft.Kiota.Serialization.Text;
 using SalesPortal.Client.CompensationPlan;
 using SalesPortal.Client.Credential;
+using SalesPortal.Client.CreditNote;
 using SalesPortal.Client.Node;
 using SalesPortal.Client.Product;
 using SalesPortal.Client.ProductGroup;
@@ -33,6 +34,11 @@ namespace SalesPortal.Client
         public global::SalesPortal.Client.Credential.CredentialRequestBuilder Credential
         {
             get => new global::SalesPortal.Client.Credential.CredentialRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The CreditNote property</summary>
+        public global::SalesPortal.Client.CreditNote.CreditNoteRequestBuilder CreditNote
+        {
+            get => new global::SalesPortal.Client.CreditNote.CreditNoteRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The Node property</summary>
         public global::SalesPortal.Client.Node.NodeRequestBuilder Node
