@@ -9,6 +9,7 @@ using SalesPortal.Client.CompensationPlan;
 using SalesPortal.Client.Credential;
 using SalesPortal.Client.CreditNote;
 using SalesPortal.Client.Node;
+using SalesPortal.Client.Person;
 using SalesPortal.Client.Product;
 using SalesPortal.Client.ProductGroup;
 using SalesPortal.Client.Sale;
@@ -44,6 +45,11 @@ namespace SalesPortal.Client
         public global::SalesPortal.Client.Node.NodeRequestBuilder Node
         {
             get => new global::SalesPortal.Client.Node.NodeRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The Person property</summary>
+        public global::SalesPortal.Client.Person.PersonRequestBuilder Person
+        {
+            get => new global::SalesPortal.Client.Person.PersonRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The Product property</summary>
         public global::SalesPortal.Client.Product.ProductRequestBuilder Product

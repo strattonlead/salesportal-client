@@ -3,6 +3,7 @@ using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions;
 using SalesPortal.Client.Node.CreateNode;
 using SalesPortal.Client.Node.GetNode;
+using SalesPortal.Client.Node.UpdateNode;
 using System.Collections.Generic;
 using System.IO;
 using System.Threading.Tasks;
@@ -24,6 +25,11 @@ namespace SalesPortal.Client.Node
         public global::SalesPortal.Client.Node.GetNode.GetNodeRequestBuilder GetNode
         {
             get => new global::SalesPortal.Client.Node.GetNode.GetNodeRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The UpdateNode property</summary>
+        public global::SalesPortal.Client.Node.UpdateNode.UpdateNodeRequestBuilder UpdateNode
+        {
+            get => new global::SalesPortal.Client.Node.UpdateNode.UpdateNodeRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
         /// Instantiates a new <see cref="global::SalesPortal.Client.Node.NodeRequestBuilder"/> and sets the default values.

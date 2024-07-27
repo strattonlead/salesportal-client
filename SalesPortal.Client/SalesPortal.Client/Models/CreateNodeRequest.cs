@@ -11,16 +11,14 @@ namespace SalesPortal.Client.Models
     public partial class CreateNodeRequest : IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>The createCredential property</summary>
+        /// <summary>The createPerson property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::SalesPortal.Client.Models.CreateCredentialRequest? CreateCredential { get; set; }
+        public global::SalesPortal.Client.Models.CreatePersonRequest? CreatePerson { get; set; }
 #nullable restore
 #else
-        public global::SalesPortal.Client.Models.CreateCredentialRequest CreateCredential { get; set; }
+        public global::SalesPortal.Client.Models.CreatePersonRequest CreatePerson { get; set; }
 #endif
-        /// <summary>The credentialId property</summary>
-        public long? CredentialId { get; set; }
         /// <summary>The name property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -31,6 +29,8 @@ namespace SalesPortal.Client.Models
 #endif
         /// <summary>The parentId property</summary>
         public long? ParentId { get; set; }
+        /// <summary>The personId property</summary>
+        public long? PersonId { get; set; }
         /// <summary>The salesGroupId property</summary>
         public long? SalesGroupId { get; set; }
         /// <summary>
@@ -51,10 +51,10 @@ namespace SalesPortal.Client.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "createCredential", n => { CreateCredential = n.GetObjectValue<global::SalesPortal.Client.Models.CreateCredentialRequest>(global::SalesPortal.Client.Models.CreateCredentialRequest.CreateFromDiscriminatorValue); } },
-                { "credentialId", n => { CredentialId = n.GetLongValue(); } },
+                { "createPerson", n => { CreatePerson = n.GetObjectValue<global::SalesPortal.Client.Models.CreatePersonRequest>(global::SalesPortal.Client.Models.CreatePersonRequest.CreateFromDiscriminatorValue); } },
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "parentId", n => { ParentId = n.GetLongValue(); } },
+                { "personId", n => { PersonId = n.GetLongValue(); } },
                 { "salesGroupId", n => { SalesGroupId = n.GetLongValue(); } },
             };
         }
@@ -65,10 +65,10 @@ namespace SalesPortal.Client.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::SalesPortal.Client.Models.CreateCredentialRequest>("createCredential", CreateCredential);
-            writer.WriteLongValue("credentialId", CredentialId);
+            writer.WriteObjectValue<global::SalesPortal.Client.Models.CreatePersonRequest>("createPerson", CreatePerson);
             writer.WriteStringValue("name", Name);
             writer.WriteLongValue("parentId", ParentId);
+            writer.WriteLongValue("personId", PersonId);
             writer.WriteLongValue("salesGroupId", SalesGroupId);
         }
     }

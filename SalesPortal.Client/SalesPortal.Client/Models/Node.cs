@@ -63,6 +63,16 @@ namespace SalesPortal.Client.Models
 #endif
         /// <summary>The parentId property</summary>
         public long? ParentId { get; set; }
+        /// <summary>The person property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::SalesPortal.Client.Models.Person? Person { get; set; }
+#nullable restore
+#else
+        public global::SalesPortal.Client.Models.Person Person { get; set; }
+#endif
+        /// <summary>The personId property</summary>
+        public long? PersonId { get; set; }
         /// <summary>The sales property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -107,6 +117,8 @@ namespace SalesPortal.Client.Models
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "parent", n => { Parent = n.GetObjectValue<global::SalesPortal.Client.Models.Node>(global::SalesPortal.Client.Models.Node.CreateFromDiscriminatorValue); } },
                 { "parentId", n => { ParentId = n.GetLongValue(); } },
+                { "person", n => { Person = n.GetObjectValue<global::SalesPortal.Client.Models.Person>(global::SalesPortal.Client.Models.Person.CreateFromDiscriminatorValue); } },
+                { "personId", n => { PersonId = n.GetLongValue(); } },
                 { "sales", n => { Sales = n.GetCollectionOfObjectValues<global::SalesPortal.Client.Models.Sale>(global::SalesPortal.Client.Models.Sale.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "salesGroup", n => { SalesGroup = n.GetObjectValue<global::SalesPortal.Client.Models.SalesGroup>(global::SalesPortal.Client.Models.SalesGroup.CreateFromDiscriminatorValue); } },
                 { "salesGroupId", n => { SalesGroupId = n.GetLongValue(); } },
@@ -127,6 +139,8 @@ namespace SalesPortal.Client.Models
             writer.WriteStringValue("name", Name);
             writer.WriteObjectValue<global::SalesPortal.Client.Models.Node>("parent", Parent);
             writer.WriteLongValue("parentId", ParentId);
+            writer.WriteObjectValue<global::SalesPortal.Client.Models.Person>("person", Person);
+            writer.WriteLongValue("personId", PersonId);
             writer.WriteCollectionOfObjectValues<global::SalesPortal.Client.Models.Sale>("sales", Sales);
             writer.WriteObjectValue<global::SalesPortal.Client.Models.SalesGroup>("salesGroup", SalesGroup);
             writer.WriteLongValue("salesGroupId", SalesGroupId);
