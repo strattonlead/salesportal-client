@@ -1,9 +1,10 @@
 {
-  "descriptionHash": "80239F6C325F2F67F00320BAF5EAD17FCB95771BA29D5D468D64C49CCE9B473F95E3E03F16F4A66A19E5E6EBEB43B41789700ACA0DA81CCE0456844CC7EA0F32",
+  "descriptionHash": "1C3B20CDF2BABEB5EBEBA067C5ADB79E82C2F9815458A05029BA215CAD3764FB34BE5C62A36492A349CC9E403CA5C96CE802B52B800671F588BE2A92F65916C3",
   "descriptionLocation": "https://api.sales.createif-labs.de/swagger/v1/swagger.json",
   "lockFileVersion": "1.0.0",
-  "kiotaVersion": "1.16.0",
+  "kiotaVersion": "1.19.0",
   "clientClassName": "SalesPortalClient",
+  "typeAccessModifier": "Public",
   "clientNamespaceName": "SalesPortal.Client",
   "language": "CSharp",
   "usesBackingStore": false,
